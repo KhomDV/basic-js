@@ -6,10 +6,7 @@ module.exports = function calculateHanoi(disksNumber, turnsSpeed) {
   let objHanoi = { turns: 0, seconds: 0 };
   let turns = 0;
 
-  for (i=1;i<=disksNumber;i++) {
-      turns = (turns * 2) + 1;
-  }
-
+  turns = Math.pow(2, disksNumber) - 1;
   objHanoi.turns   = turns;
   objHanoi.seconds = Math.floor((3600/turnsSpeed) * turns);
   
